@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  apache_server:
+    container_name: apache_server
+    build:
+      args:
+        - ARGS_PHP_VERSION=${PHP_VERSION}
+        - ARGS_MAINTAINER=${MAINTAINER_NAME}
+        - ARGS_INSTALL_GIT=true
+        - ARGS_INSTALL_XDEBUG=true
+        - ARGS_TZ=${TIME_ZONE}
+      context: .
+      dockerfile: ./web/Dockerfile
+    restart: always
+    environment:
+      TZ: ${TIME_ZONE}
+    ports:
+      - '${APACHE_HTTP_PORT}:80'
+      - '${APACHE_HTTPS_PORT}:443'
+    volumes:
+      - ../app:${APACHE_DOCUMENT_ROOT}
+      - ./web/operation/logs:${APACHE_LOG_PATH}

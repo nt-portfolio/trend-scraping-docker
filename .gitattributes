@@ -1,0 +1,25 @@
+*         text=auto
+*.txt     text
+*.vbproj  text eol=crlf
+*.vb      text eol=crlf
+*.sln     text eol=crlf
+*.bat     text eol=crlf
+*.ps1     text eol=crlf
+*.sh      text eol=lf
+*.php     text eol=lf
+*.html    text eol=lf
+*.css     text eol=lf
+*.scss    text eol=lf
+*.js      text eol=lf
+*.jpg     -text
+*.jpeg    -text
+*.png     -text
+*.webp    -text
+*.gif     -text
+*.mp4     -text
+*.mov     -text
+*.mp3     -text
+*.wav     -text
+*.aiff    -text
+
+node_modules/* linguist-vendored=false
